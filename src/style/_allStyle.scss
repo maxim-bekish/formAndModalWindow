@@ -1,0 +1,198 @@
+$fz: 25px;
+$borderR: 15px;
+.hidden {
+  overflow: hidden;
+}
+body {
+  height: 100vh;
+  display: flex;
+  background-color: #d7dee4;
+  justify-content: center;
+  align-items: center;
+}
+.wrapModal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 5;
+  background-color: rgb(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s, visibility 0.4s;
+  &.open {
+    visibility: visible;
+    opacity: 1;
+
+    .modalWindow {
+      transform: scale(1);
+    }
+  }
+
+  .modalWindow {
+    position: relative;
+    margin: 20px 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.217);
+    max-width: 700px;
+    width: 100%;
+    padding: 40px;
+    z-index: 1;
+    background-color: white;
+    transform: scale(0);
+    transition: transform 0.8s;
+    justify-content: center;
+    margin: 0 auto;
+    border: 0;
+    border-radius: $borderR;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    .wrapperInfoModal {
+      display: flex;
+      gap: 23px;
+      flex-direction: column;
+    }
+    h2 {
+      color: #7c7c7c;
+      font-size: 30px;
+    }
+    p {
+      font-size: 23px;
+      color: #7c7c7c;
+    }
+    ul {
+      display: flex;
+      font-size: 18px;
+      gap: 12px;
+      flex-direction: column;
+      li {
+        color: #7c7c7c;
+        &:last-child {
+          color: black;
+          a {
+            font-weight: 500;
+            font-size: 21px;
+            text-decoration: none;
+            &:hover {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+    .closed {
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+}
+
+.wrapperForm {
+  border-radius: $borderR;
+
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.217);
+  max-width: 700px;
+  width: 100%;
+  padding: 20px;
+  background-color: #cdcdcd;
+
+  .feedbackForm {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    font-size: $fz;
+    gap: 20px;
+    width: 100%;
+    .modalWindow__miniWrapper {
+      display: flex;
+      width: 100%;
+      max-width: 600px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+      height: 110px;
+      &:nth-child(4) {
+        height: 200px;
+      }
+
+      label {
+        font-weight: 600;
+        max-width: 150px;
+        width: 100%;
+        min-width: 100px;
+      }
+      .errorLabel {
+        display: contents;
+        font-size: 15px;
+        font-weight: 400;
+        color: red;
+      }
+      textarea {
+        overflow: hidden;
+        height: 140px;
+        resize: none;
+      }
+
+      textarea,
+      input {
+        min-width: 100px;
+        padding: 12px;
+        font-size: $fz;
+        background-color: #e7e7e7;
+        box-sizing: border-box;
+        border-radius: $borderR;
+        width: 100%;
+        border: 0;
+        &:-webkit-autofill {
+          -webkit-box-shadow: 0 0 0px 1000px #e7e7e7 inset;
+          &:hover {
+            -webkit-box-shadow: 0 0 0px 1000px #e7e7e7 inset;
+            font-size: $fz;
+          }
+          &:focus {
+            -webkit-box-shadow: 0 0 0px 1000px #e7e7e7 inset;
+            font-size: $fz;
+          }
+        }
+        &:hover {
+          box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.176);
+        }
+        &:focus {
+          outline: 0;
+          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+        }
+        :-webkit-autofill {
+          background-color: red;
+        }
+      }
+    }
+    .error {
+      box-shadow: 0 0 6px 0 rgba(255, 0, 0, 0.4);
+    }
+    button {
+      cursor: pointer;
+      border-radius: $borderR;
+      padding: 8px 15px;
+      font-size: $fz;
+      border: 0;
+      background-color: rgba(0, 0, 0, 0.095);
+      &:hover {
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.354);
+      }
+      &:active {
+        background-color: rgba(0, 0, 0, 0.273);
+      }
+    }
+  }
+}

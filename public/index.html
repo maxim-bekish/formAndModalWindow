@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <body>
+    <div class="wrapperForm">
+      <form id="feedbackForm" class="feedbackForm">
+        <div class="modalWindow__miniWrapper">
+          <label for="name">Имя*</label>
+          <input type="text" id="name" name="name" class="inputForm" />
+        </div>
+        <div class="modalWindow__miniWrapper">
+          <label for="email">Email*</label>
+          <input type="email" id="email" name="email" class="inputForm" />
+        </div>
+        <div class="modalWindow__miniWrapper">
+          <label for="telephone">Телефон* </label>
+          <input
+            type="text"
+            id="telephone"
+            name="telephone"
+            class="inputForm"
+          />
+        </div>
+        <div class="modalWindow__miniWrapper">
+          <label for="message">Сообщение*</label>
+          <textarea id="message" name="message" class="inputForm"></textarea>
+          <span class="error"></span>
+        </div>
+        <div>
+          <button id="submit" type="submit">Отправить</button>
+          <button id="btn" class="btn">Open Form</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="wrapModal" class="wrapModal">
+      <div id="modalWindow" class="modalWindow">
+        <img
+          class="closed"
+          id="closed"
+          src="./../src/assets/svg/closed.svg"
+          alt=""
+        />
+
+        <h2>Модальное Окно</h2>
+        <div class="wrapperInfoModal">
+          <p>
+            Сверстать произвольное модальное окно с произвольным текстом,
+            добавить на страницу кнопку которая будет открывать это модальное
+            окно. <br />
+            Требования:
+          </p>
+          <ul>
+            <li>
+              При открытии модального окна, страница не должна “дергаться”.
+            </li>
+            <li>Открытие должно быть анимированным (на Ваше усмотрение).</li>
+            <li>
+              Страница не должна прокручиваться при открытом модальном окне.
+            </li>
+            <li>
+              Все должно быть реализовано максимально через css (предполагается
+              что js будет только добавлять/удалять классы).
+            </li>
+            <li>
+              Если вы довольны результатом выполнения тестового задания
+              приглашаю вас посетить мой сай cv по это
+              <a target="_blank" href="https://cv-maxim-bekish.vercel.app/">
+                ссылке</a
+              >. Тут есть вся нужная информация обо мне.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
