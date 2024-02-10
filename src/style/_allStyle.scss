@@ -1,15 +1,22 @@
 $fz: 25px;
 $borderR: 15px;
+$black0-35: rgba(0, 0, 0, 0.35);
+$colorRED: rgb(255, 0, 0);
+$colorGray: rgb(124, 124, 124);
+$colorGray-White: rgb(231, 231, 231);
+
 .hidden {
   overflow: hidden;
 }
+
 body {
   height: 100vh;
   display: flex;
-  background-color: #d7dee4;
+  background-color: rgb(215, 222, 228);
   justify-content: center;
   align-items: center;
 }
+
 .wrapModal {
   position: fixed;
   left: 0;
@@ -17,7 +24,7 @@ body {
   width: 100%;
   height: 100vh;
   z-index: 5;
-  background-color: rgb(0, 0, 0, 0.3);
+  background-color: $black0-35;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,12 +44,12 @@ body {
   .modalWindow {
     position: relative;
     margin: 20px 10px;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.217);
+    box-shadow: 0 0 10px 0 $black0-35;
     max-width: 700px;
     width: 100%;
     padding: 40px;
     z-index: 1;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     transform: scale(0);
     transition: transform 0.8s;
     justify-content: center;
@@ -59,12 +66,12 @@ body {
       flex-direction: column;
     }
     h2 {
-      color: #7c7c7c;
+      color: $colorGray;
       font-size: 30px;
     }
     p {
       font-size: 23px;
-      color: #7c7c7c;
+      color: $colorGray;
     }
     ul {
       display: flex;
@@ -72,15 +79,15 @@ body {
       gap: 12px;
       flex-direction: column;
       li {
-        color: #7c7c7c;
+        color: $colorGray;
         &:last-child {
-          color: black;
+          color: rgb(0, 0, 0);
           a {
             font-weight: 500;
             font-size: 21px;
             text-decoration: none;
             &:hover {
-              color: red;
+              color: $colorRED;
             }
           }
         }
@@ -99,14 +106,14 @@ body {
 
 .wrapperForm {
   border-radius: $borderR;
-
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.217);
+  box-shadow: 0 0 10px 0 $black0-35;
   max-width: 700px;
   width: 100%;
   padding: 20px;
-  background-color: #cdcdcd;
+  background-color: rgb(205, 205, 205);
 
   .feedbackForm {
+    font-family: sans-serif;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -122,7 +129,7 @@ body {
       align-items: flex-start;
       gap: 2px;
       height: 110px;
-      &:nth-child(4) {
+      &:nth-child(5) {
         height: 200px;
       }
 
@@ -136,7 +143,7 @@ body {
         display: contents;
         font-size: 15px;
         font-weight: 400;
-        color: red;
+        color: $colorRED;
       }
       textarea {
         overflow: hidden;
@@ -149,50 +156,55 @@ body {
         min-width: 100px;
         padding: 12px;
         font-size: $fz;
-        background-color: #e7e7e7;
+        background-color: $colorGray-White;
         box-sizing: border-box;
         border-radius: $borderR;
         width: 100%;
         border: 0;
         &:-webkit-autofill {
-          -webkit-box-shadow: 0 0 0px 1000px #e7e7e7 inset;
+          -webkit-box-shadow: 0 0 0px 1000px $colorGray-White inset;
           &:hover {
-            -webkit-box-shadow: 0 0 0px 1000px #e7e7e7 inset;
+            -webkit-box-shadow: 0 0 0px 1000px $colorGray-White inset;
             font-size: $fz;
           }
           &:focus {
-            -webkit-box-shadow: 0 0 0px 1000px #e7e7e7 inset;
+            -webkit-box-shadow: 0 0 0px 1000px $colorGray-White inset;
             font-size: $fz;
           }
         }
         &:hover {
-          box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.176);
+          box-shadow: 0 0 3px 0 $black0-35;
         }
         &:focus {
           outline: 0;
-          box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 7px 0 $black0-35;
         }
         :-webkit-autofill {
-          background-color: red;
+          background-color: $colorRED;
         }
       }
     }
+    h1 {
+      font-family: sans-serif;
+      font-size: 33px;
+    }
     .error {
-      box-shadow: 0 0 6px 0 rgba(255, 0, 0, 0.4);
+      box-shadow: 0 0 4px 0 $colorRED;
     }
-    button {
-      cursor: pointer;
-      border-radius: $borderR;
-      padding: 8px 15px;
-      font-size: $fz;
-      border: 0;
-      background-color: rgba(0, 0, 0, 0.095);
-      &:hover {
-        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.354);
-      }
-      &:active {
-        background-color: rgba(0, 0, 0, 0.273);
-      }
-    }
+  }
+}
+
+.btn {
+  cursor: pointer;
+  border-radius: $borderR;
+  padding: 8px 15px;
+  font-size: $fz;
+  border: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  &:hover {
+    box-shadow: 0 0 5px 0 $black0-35;
+  }
+  &:active {
+    background-color: $black0-35;
   }
 }
