@@ -1,4 +1,3 @@
-import "../public/index.html";
-import './modules/xxx.js';
 import "./style.scss";
-
+import "./modules/start.js";
+import "../public/index.html";
